@@ -23,6 +23,7 @@ addon | version | maintainers | summary
 --- | --- | --- | ---
 [database_cleanup](database_cleanup/) | 18.0.1.0.0 |  | Database cleanup
 [jsonifier](jsonifier/) | 18.0.1.0.0 |  | JSON-ify data for all models
+[module_change_auto_install](module_change_auto_install/) | 18.0.1.0.0 | [![legalsylvain](https://github.com/legalsylvain.png?size=30px)](https://github.com/legalsylvain) | Customize auto installables modules by configuration
 [onchange_helper](onchange_helper/) | 18.0.1.0.0 |  | Technical module that ease execution of onchange in Python code
 
 [//]: # (end addons)
