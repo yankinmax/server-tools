@@ -3,3 +3,4 @@ dataclasses
 mako
 odoorpc
 openupgradelib
+astor
