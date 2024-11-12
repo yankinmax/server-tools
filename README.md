@@ -24,6 +24,7 @@ addon | version | maintainers | summary
 [base_cron_exclusion](base_cron_exclusion/) | 18.0.1.0.0 | [![LoisRForgeFlow](https://github.com/LoisRForgeFlow.png?size=30px)](https://github.com/LoisRForgeFlow) [![ChrisOForgeFlow](https://github.com/ChrisOForgeFlow.png?size=30px)](https://github.com/ChrisOForgeFlow) | Allow you to select scheduled actions that should not run simultaneously.
 [base_time_window](base_time_window/) | 18.0.1.0.0 |  | Base model to handle time windows
 [database_cleanup](database_cleanup/) | 18.0.1.0.0 |  | Database cleanup
+[dbfilter_from_header](dbfilter_from_header/) | 18.0.1.0.0 |  | Filter databases with HTTP headers
 [jsonifier](jsonifier/) | 18.0.1.0.0 |  | JSON-ify data for all models
 [module_change_auto_install](module_change_auto_install/) | 18.0.1.0.1 | [![legalsylvain](https://github.com/legalsylvain.png?size=30px)](https://github.com/legalsylvain) | Customize auto installables modules by configuration
 [onchange_helper](onchange_helper/) | 18.0.1.0.0 |  | Technical module that ease execution of onchange in Python code
