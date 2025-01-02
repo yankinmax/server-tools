@@ -530,7 +530,16 @@ class UpgradeAnalysis(models.Model):
 
         module_domain = [
             ("state", "=", "installed"),
-            ("name", "not in", ["upgrade_analysis", "openupgrade_records"]),
+            (
+                "name",
+                "not in",
+                [
+                    "upgrade_analysis",
+                    "openupgrade_records",
+                    "openupgrade_scripts",
+                    "openupgrade_framework",
+                ],
+            ),
         ]
 
         connection = self.config_id.get_connection()
@@ -550,16 +559,19 @@ class UpgradeAnalysis(models.Model):
         module_descriptions = {}
         for module in all_modules:
             status = ""
+            is_new = False
             if module in all_local_modules and module in all_remote_modules:
                 module_description = f" {module}"
             elif module in all_local_modules:
                 module_description = f" |new| {module}"
+                is_new = True
             else:
                 module_description = f" |del| {module}"
 
-            if module in compare.apriori.merged_modules:
+            # new modules cannot be merged/renamed in same version
+            if not is_new and module in compare.apriori.merged_modules:
                 status = f"Merged into {compare.apriori.merged_modules[module]}. "
-            elif module in compare.apriori.renamed_modules:
+            elif not is_new and module in compare.apriori.renamed_modules:
                 status = f"Renamed to {compare.apriori.renamed_modules[module]}. "
             elif module in compare.apriori.renamed_modules.values():
                 status = "Renamed from {}. ".format(
